@@ -1,0 +1,6 @@
+{
+  "ignore": ["node_modules"],
+  "watch": ["src", ".env"],
+  "exec": "ts-node --type-check -r tsconfig-paths/register src/server.ts",
+  "ext": "ts"
+}

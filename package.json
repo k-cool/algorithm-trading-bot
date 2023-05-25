@@ -1,0 +1,35 @@
+{
+  "name": "algorithm-trading-bot",
+  "version": "0.0.1",
+  "description": "알고리즘 트레이딩 봇",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "",
+    "build": ""
+  },
+  "repository": "https://github.com/k-cool/algorithm-trading-bot.git",
+  "author": "siwon <ksw3721@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.5",
+    "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^20.2.3",
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4"
+  }
+}
