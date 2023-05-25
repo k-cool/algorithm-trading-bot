@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosInstance } from "axios";
-import { v4 as uuid } from "uuid";
 import jwt from "jsonwebtoken";
+import { v4 as uuid } from "uuid";
 
 export default class Upbit {
   upbitAxios: AxiosInstance;
