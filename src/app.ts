@@ -38,6 +38,6 @@ app.use((err: unknown, req: Request, res: Response, next: NextFunction) => {
 });
 
 // process 실행
-startProcess(access_key, secret_key, server_url);
+// startProcess(access_key, secret_key, server_url);
 
 export default app;

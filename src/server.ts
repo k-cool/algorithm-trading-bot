@@ -1,12 +1,11 @@
 // import app from "@/app.ts";
 
 import app from "./app";
+import connect from "./model";
 
 const start = async () => {
   try {
-    app.listen(app.get("port"), () => {
-      console.log(`서버가 ${app.get("port")}번에 열렸어요~`);
-    });
+    connect();
   } catch (error) {
     console.error(error);
   }
