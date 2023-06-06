@@ -1,6 +1,5 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import app from "../app";
 
 import { Coin } from "./CoinEntity";
 import { Candle } from "./CandleEntity";
@@ -23,13 +22,6 @@ export const AppDataSource = new DataSource({
   namingStrategy: new SnakeNamingStrategy(),
 });
 
-const connect = () =>
-  AppDataSource.initialize()
-    .then(() => {
-      app.listen(app.get("port"), () => {
-        console.log(`서버가 ${app.get("port")}번에 열렸어요~`);
-      });
-    })
-    .catch((error: unknown) => console.log("DB 연결 에러", error));
+const connect = () => AppDataSource.initialize();
 
 export default connect;
