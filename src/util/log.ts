@@ -3,7 +3,7 @@ const colorSequence: ColorSequence = {
   red: "\x1b[31m",
   green: "\x1b[32m",
   yellow: "\x1b[33m",
-  blueBright: "\x1b[94m",
+  purple: "\x1b[95m",
 };
 
 function getHighlightedText(str: string, color: Color) {
@@ -32,9 +32,9 @@ export default function bootstrapLog(isDebug: boolean) {
     console.log(getHighlightedText(this.toString(), "blue"));
   };
 
-  String.prototype.logSkyblue = function () {
+  String.prototype.logPurple = function () {
     if (!isDebug) return;
-    console.log(getHighlightedText(this.toString(), "blueBright"));
+    console.log(getHighlightedText(this.toString(), "purple"));
   };
 
   String.prototype.logGreen = function () {
@@ -56,8 +56,8 @@ export default function bootstrapLog(isDebug: boolean) {
     return useColor(this.toString(), "blue");
   };
 
-  String.prototype.skyBlue = function () {
-    return useColor(this.toString(), "blueBright");
+  String.prototype.purple = function () {
+    return useColor(this.toString(), "purple");
   };
 
   String.prototype.red = function () {

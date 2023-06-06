@@ -4,10 +4,10 @@ import connect from "./model";
 const start = async () => {
   // DB 연결
   try {
-    const a = await connect();
-    console.log("done");
+    await connect();
+
     app.listen(app.get("port"), () => {
-      console.log(`서버가 ${app.get("port")}번에 열렸어요~`);
+      `서버가 ${(app.get("port") as string).purple()}번에 열렸어요~`.log();
     });
   } catch (err) {
     console.log("DB 연결 에러", err);

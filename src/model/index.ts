@@ -1,13 +1,16 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
+import { SnakeNamingStrategy } from "typeorm-naming-strategies";
+import dotenv from "dotenv";
 
 import { Coin } from "./CoinEntity";
 import { Candle } from "./CandleEntity";
 import { Action } from "./ActionEntity";
 import { Bot } from "./BotEntity";
-import { SnakeNamingStrategy } from "typeorm-naming-strategies";
 
-export const AppDataSource = new DataSource({
+dotenv.config();
+
+export const dataSource = new DataSource({
   type: "mysql",
   host: "127.0.0.1",
   port: Number(process.env.MYSQL_PORT) || 3306,
@@ -22,6 +25,6 @@ export const AppDataSource = new DataSource({
   namingStrategy: new SnakeNamingStrategy(),
 });
 
-const connect = () => AppDataSource.initialize();
+const connect = () => dataSource.initialize();
 
 export default connect;
