@@ -12,19 +12,19 @@ export class Candle {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column("float")
+  @Column("double")
   open: number;
 
-  @Column("float")
+  @Column("double")
   high: number;
 
-  @Column("float")
+  @Column("double")
   low: number;
 
-  @Column("float")
+  @Column("double")
   close: number;
 
-  @Column("float")
+  @Column("double")
   volume: number;
 
   @CreateDateColumn({ name: "created_at" })

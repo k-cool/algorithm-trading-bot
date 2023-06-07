@@ -1,8 +1,6 @@
 import Upbit from "./modules/upbit";
 import Calculation from "./modules/calculation";
-import { tickerData } from "./data/tickerTest";
-import { coinRepository } from "./repository";
-import { Coin } from "./model/CoinEntity";
+import { candleRepository, coinRepository } from "./repository";
 
 export default async function startProcess(
   accessKey: string,
@@ -19,11 +17,7 @@ export default async function startProcess(
 
   // Calculation 시작
   "Calculation 초기화".logGreen();
-  const calculation = new Calculation(upbit, coinRepository);
+  const calculation = new Calculation(upbit, coinRepository, candleRepository);
 
-  // 코인 정보 DB에 저장
-  await calculation.setCoinMetadataToDB(tickerData);
-
-  // await coinRepository.deleteAll();
-  return await coinRepository.find();
+  return "ok";
 }

@@ -1,6 +1,6 @@
 import { getTickerDTO } from "../DTO/temp.dto";
 
-export const tickerData: getTickerDTO = {
+export const TICKER_DATA: getTickerDTO = {
   tickerData: [
     {
       market: "KRW-KNC",

@@ -1,11 +1,6 @@
-import { Repository } from "typeorm";
 import { dataSource } from "../model";
 import { Coin } from "../model/CoinEntity";
-
-export type CoinRepository = Repository<Coin> & {
-  deleteAll(): Promise<void>;
-  upsertMany(coinList: Partial<Coin>[]): Promise<void>;
-};
+import { CoinRepository } from "../types/coinRepository.type";
 
 export const coinRepository: CoinRepository = dataSource
   .getRepository(Coin)
@@ -25,5 +20,9 @@ export const coinRepository: CoinRepository = dataSource
       });
 
       await Promise.all(promises);
+    },
+
+    async getTickerList() {
+      return await this.find({ select: ["id", "ticker"] });
     },
   });
